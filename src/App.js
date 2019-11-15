@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route, Link } from 'react-router-dom'
 import Header from "./components/Header.js";
 import CharacterList from './components/CharacterList'
+import SearchForm from './components/SearchForm'
 import axios from 'axios'
 import WelcomePage from "./components/WelcomePage.js";
 import styled from 'styled-components'
@@ -28,8 +29,10 @@ export default function App() {
       <Links>
         <Link className='links' to='/'>Home</Link>
         <Link className='links' to='/character-list'>Characters</Link>
+        <Link className='links' to='/search-form'>Search</Link>
       </Links>
       <Route path='/character-list' render={props => <CharacterList {...props} character={character} />} />
+      <Route path='/search-form' render={props => <SearchForm {...props} character={character} />} />
     </main>
   );
 }
