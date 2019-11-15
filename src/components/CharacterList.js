@@ -28,7 +28,7 @@ export default function CharacterList(props) {
           name={character.name}
           species={character.species}
           status={character.status}
-          origin={character.origin.name}
+          origin={character.origin}
         />
       ))}
     </Container>
