@@ -47,3 +47,14 @@ header h1 {
   font-size: 20px;
   font-weight: bold;
 }
+
+input {
+  width: 150px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+label {
+  font-size: 18px;
+}

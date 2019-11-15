@@ -1,5 +1,21 @@
 import React, { useState, useEffect } from "react";
-import CharacterCard from './CharacterCard'
+import CharacterCard from './CharacterCard';
+import styled from 'styled-components';
+
+const Container = styled.section`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+`
+const Form = styled.form`
+margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+
 
 export default function SearchForm(props) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -9,7 +25,10 @@ export default function SearchForm(props) {
   useEffect(() => {
     const results = props.character.filter(character => character.name.toLowerCase().includes(searchTerm.toLowerCase()));
     setSearchResults(results)
-  }, [searchTerm])
+  }, [searchTerm, props.character])
+
+  //Kevin: why did react make me add the props.character to the dependency array??
+  // also what exactly connects the Search and results?
 
   const handleChange = e => {
     setSearchTerm(e.target.value)
@@ -18,7 +37,7 @@ export default function SearchForm(props) {
   return (
     <section className="search-form">
       {/* // Add a search form here */}
-      <form>
+      <Form>
         <label htmlFor='name'>Search:</label>
         <input
           id="name"
@@ -28,8 +47,8 @@ export default function SearchForm(props) {
           onChange={handleChange}
           value={searchTerm}
         />
-      </form>
-      <div>
+      </Form>
+      <Container>
         {searchResults.map(character => (
           <CharacterCard
             key={character.id}
@@ -37,10 +56,10 @@ export default function SearchForm(props) {
             name={character.name}
             species={character.species}
             status={character.status}
-            origin={character.origin.name}
+            origin={character.origin}
           />
         ))}
-      </div>
+      </Container>
     </section>
   );
 }
