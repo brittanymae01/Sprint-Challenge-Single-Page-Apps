@@ -27,9 +27,10 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x]  Explain benefit(s) using `client-side routing`?
 
+> Answer:
+
 It offers control over your site URL & content without necessarily having to wait for a server to respond with content. It does this by using JavaScript to maintain state (or memory) within our applications and uses that memory to tell the browser what to display when a resource is requested. The best part about it is the page won’t refresh!
 
-> Answer:
 
 ## Project Set Up
 
@@ -66,8 +67,8 @@ Construct a Single Page Application with React.
 **Your finished project must include all of the following requirements:**
 
 _Display Data from a Server API_
-- [ ]  Fetch a list of characters from the Rick and Morty API's Characters endpoint *`https://rickandmortyapi.com/api/character/`* and render them to the screen.
-- [ ]  You must display at least one element for each character.
+- [x]  Fetch a list of characters from the Rick and Morty API's Characters endpoint *`https://rickandmortyapi.com/api/character/`* and render them to the screen.
+- []  You must display at least one element for each character.
 
 _Add a Router to this application using [React Router](https://reacttraining.com/react-router/web/guides/quick-start)._
 
