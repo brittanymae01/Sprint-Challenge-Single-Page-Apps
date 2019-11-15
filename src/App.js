@@ -20,6 +20,9 @@ export default function App() {
       console.log(response)
       setCharacter(response.data.results)
     })
+      .catch(error => {
+        console.log('Data was not returned', error);
+      });
   }, [])
 
   return (
@@ -30,6 +33,7 @@ export default function App() {
         <Link className='links' to='/'>Home</Link>
         <Link className='links' to='/character-list'>Characters</Link>
         <Link className='links' to='/search-form'>Search</Link>
+        <Link className='links' to='/locations'>Search</Link>
       </Links>
       <Route path='/character-list' render={props => <CharacterList {...props} character={character} />} />
       <Route path='/search-form' render={props => <SearchForm {...props} character={character} />} />
