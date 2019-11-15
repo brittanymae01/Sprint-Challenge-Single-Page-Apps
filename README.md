@@ -25,7 +25,9 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [x]  Explain benefit(s) using `client-side routing`?
+
+It offers control over your site URL & content without necessarily having to wait for a server to respond with content. It does this by using JavaScript to maintain state (or memory) within our applications and uses that memory to tell the browser what to display when a resource is requested. The best part about it is the page won’t refresh!
 
 > Answer:
 
