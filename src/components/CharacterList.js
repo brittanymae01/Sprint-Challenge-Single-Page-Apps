@@ -8,8 +8,6 @@ flex-wrap: wrap;
 justify-content: center;
 `
 
-
-
 export default function CharacterList(props) {
   // TODO: Add useState to track data from useEffect
 

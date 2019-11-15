@@ -15,8 +15,6 @@ margin: 30px 0;
   align-items: center;
 `
 
-
-
 export default function SearchForm(props) {
   const [searchTerm, setSearchTerm] = useState('');
 

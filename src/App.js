@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom';
+import axios from 'axios';
 import Header from "./components/Header.js";
-import CharacterList from './components/CharacterList'
-import SearchForm from './components/SearchForm'
-import axios from 'axios'
+import CharacterList from './components/CharacterList';
+import SearchForm from './components/SearchForm';
 import WelcomePage from "./components/WelcomePage.js";
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Links = styled.div`
 text-align: center;
@@ -17,7 +17,7 @@ export default function App() {
 
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/character/').then(response => {
-      console.log(response)
+      // console.log(response)
       setCharacter(response.data.results)
     })
       .catch(error => {
@@ -33,7 +33,6 @@ export default function App() {
         <Link className='links' to='/'>Home</Link>
         <Link className='links' to='/character-list'>Characters</Link>
         <Link className='links' to='/search-form'>Search</Link>
-        <Link className='links' to='/locations'>Search</Link>
       </Links>
       <Route path='/character-list' render={props => <CharacterList {...props} character={character} />} />
       <Route path='/search-form' render={props => <SearchForm {...props} character={character} />} />
